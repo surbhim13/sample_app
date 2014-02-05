@@ -176,7 +176,9 @@ input {
   @extend .error;
 }
 
-
+.btn, .btn:hover {
+  background: #BD65B1;
+}
 /* Users index */
 
 .users {

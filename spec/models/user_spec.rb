@@ -17,6 +17,10 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+  it { should respond_to(:company) }
+  it { should respond_to(:website) }
+  it { should respond_to(:license_no) }
+  it { should respond_to(:awards) }
 
   it { should be_valid }
   it { should_not be_admin }

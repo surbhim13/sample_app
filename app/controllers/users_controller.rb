@@ -19,8 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the H-Design!"
-      redirect_to @user
+      redirect_to after_signup_path(:business_info)
     else
       render 'new'
     end
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "Profile Updated Successfully!"
       redirect_to @user
     else
       render 'edit'
@@ -50,7 +49,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :status, :company, :website, :license_no, :awards)
     end
   
     # Before filters

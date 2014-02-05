@@ -1,0 +1,14 @@
+<h1>Award Info</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user, url: wizard_path, method: "put") do |f| %>
+      <%= render 'shared/error_messages' %>
+
+		<%= f.label :awards %>
+		<%= f.text_field :awards %>
+		
+      <%= f.submit "Finish", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

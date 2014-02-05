@@ -1,5 +1,8 @@
 SampleApp::Application.routes.draw do
+  resources :after_signup
   resources :users
+  #   resources :after_signup
+  # end
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'

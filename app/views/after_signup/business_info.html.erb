@@ -1,0 +1,20 @@
+<h1>Tell us a little about what you do.</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user, url: wizard_path, method: "put") do |f| %>
+      <%= render 'shared/error_messages' %>
+
+		<%= f.label :company, "Company Name" %>
+		<%= f.text_field :company %>
+
+		<%= f.label :website %>
+		<%= f.text_field :website %>
+
+		<%= f.label :license_no %>
+		<%= f.text_field :license_no %>
+
+      <%= f.submit "Continue", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

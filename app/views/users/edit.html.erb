@@ -2,13 +2,38 @@
 <h1>Update your profile</h1>
 
 <div class="row">
+
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
-      <%= render 'fields', f: f %>
+
+		<%= render 'shared/error_messages' %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email, :disabled => true %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.label :password_confirmation, "Confirm Password" %>
+			<%= f.password_field :password_confirmation %>
+		
+			<%= f.label :company, "Company Name" %>
+			<%= f.text_field :company %>
+
+			<%= f.label :website %>
+			<%= f.text_field :website %>
+
+			<%= f.label :license_no %>
+			<%= f.text_field :license_no %>
+		
+			<%= f.label :awards %>
+			<%= f.text_field :awards %>
+
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
   </div>
 </div>
